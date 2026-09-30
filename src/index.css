@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --navy: #0B1D3A;
+    --trust-blue: #0052CC;
+    --gold: #C5A059;
+    --matte-black: #1A1A1A;
+    --soft-stone: #F4F5F7;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #1A1A1A;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+@theme {
+  --color-corporate-navy: #0B1D3A;
+  --color-navy-dark: #071326;
+  --color-navy-light: #152B52;
+
+  --color-trust-blue: #0052CC;
+  --color-trust-blue-hover: #0043A8;
+
+  --color-champagne-gold: #C5A059;
+  --color-gold-hover: #B28E46;
+  --color-gold-light: #F3E5C8;
+
+  --color-matte-black: #1A1A1A;
+  --color-matte-dark: #121212;
+
+  --color-soft-stone: #F4F5F7;
+  --color-stone-border: #E2E4E8;
+}
+
+/* Custom luxury styles */
+.bg-navy-gradient {
+  background: linear-gradient(135deg, #0B1D3A 0%, #061224 100%);
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #9E7933 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F3E5C8 0%, #C5A059 60%, #A37E36 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-glow {
+  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.25);
+}
+
+.navy-card-shadow {
+  box-shadow: 0 10px 30px -5px rgba(11, 29, 58, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+}
