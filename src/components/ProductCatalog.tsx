@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import type { Product } from '../types/product';
 import { ProductCard } from './ProductCard';
-import { Search, Filter, RotateCcw, Package, ListFilter } from 'lucide-react';
+import { Search, Filter, RotateCcw, Package, ListFilter, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface ProductCatalogProps {
   products: Product[];
@@ -19,12 +19,20 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  
+  // Display count state - initially show top 8 products (2 complete desktop 4-column rows)
+  const [visibleCount, setVisibleCount] = useState<number>(8);
+
+  // Reset visible count back to top 8 whenever search or category filters change
+  useEffect(() => {
+    setVisibleCount(8);
+  }, [selectedCategory, selectedSubCategory, searchQuery]);
 
   // Extract unique categories dynamically from products
   const categories = useMemo(() => {
     const set = new Set<string>();
     products.forEach((p) => {
-      if (p.category) set.add(p.category);
+      if (p.category) set.add(p.category.trim());
     });
     return Array.from(set).sort();
   }, [products]);
@@ -33,8 +41,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   const subCategories = useMemo(() => {
     const set = new Set<string>();
     products.forEach((p) => {
-      if (selectedCategory === 'ALL' || p.category === selectedCategory) {
-        if (p.sub_category) set.add(p.sub_category);
+      const pCat = p.category ? p.category.trim() : '';
+      if (selectedCategory === 'ALL' || pCat === selectedCategory) {
+        if (p.sub_category) set.add(p.sub_category.trim());
       }
     });
     return Array.from(set).sort();
@@ -51,28 +60,35 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     setSelectedCategory('ALL');
     setSelectedSubCategory('ALL');
     setSearchQuery('');
+    setVisibleCount(8);
   };
 
-  // Filter products
+  // Filter products cleanly with normalized string matching
   const filteredProducts = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    const selCatNorm = selectedCategory.trim().toLowerCase();
+    const selSubCatNorm = selectedSubCategory.trim().toLowerCase();
+
     return products.filter((product) => {
+      const prodCatNorm = (product.category || '').trim().toLowerCase();
+      const prodSubCatNorm = (product.sub_category || '').trim().toLowerCase();
+
       // Category Filter
-      if (selectedCategory !== 'ALL' && product.category !== selectedCategory) {
+      if (selCatNorm !== 'all' && prodCatNorm !== selCatNorm) {
         return false;
       }
       // Sub Category Filter
-      if (selectedSubCategory !== 'ALL' && product.sub_category !== selectedSubCategory) {
+      if (selSubCatNorm !== 'all' && prodSubCatNorm !== selSubCatNorm) {
         return false;
       }
       // Search Query Filter
-      if (searchQuery.trim() !== '') {
-        const query = searchQuery.toLowerCase();
-        const matchesSku = product.sku.toLowerCase().includes(query);
-        const matchesName = product.name.toLowerCase().includes(query);
-        const matchesSpecs = product.specs.toLowerCase().includes(query);
-        const matchesMaterial = product.material.toLowerCase().includes(query);
-        const matchesCategory = product.category.toLowerCase().includes(query);
-        const matchesSubCategory = product.sub_category.toLowerCase().includes(query);
+      if (query !== '') {
+        const matchesSku = (product.sku || '').toLowerCase().includes(query);
+        const matchesName = (product.name || '').toLowerCase().includes(query);
+        const matchesSpecs = (product.specs || '').toLowerCase().includes(query);
+        const matchesMaterial = (product.material || '').toLowerCase().includes(query);
+        const matchesCategory = prodCatNorm.includes(query);
+        const matchesSubCategory = prodSubCatNorm.includes(query);
 
         return (
           matchesSku ||
@@ -87,9 +103,26 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     });
   }, [products, selectedCategory, selectedSubCategory, searchQuery]);
 
+  // Limit displayed products to current visibleCount (Top 8 initially)
+  const displayedProducts = useMemo(() => {
+    return filteredProducts.slice(0, visibleCount);
+  }, [filteredProducts, visibleCount]);
+
   const quoteSkuSet = useMemo(() => {
     return new Set(quoteItems.map((item) => item.sku));
   }, [quoteItems]);
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 8);
+  };
+
+  const handleShowAll = () => {
+    setVisibleCount(filteredProducts.length);
+  };
+
+  const handleShowLess = () => {
+    setVisibleCount(8);
+  };
 
   return (
     <section id="catalog" className="py-20 bg-[#0B1D3A] text-white relative border-b border-[#0052CC]/20">
@@ -106,7 +139,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           </h2>
           <div className="w-20 h-1 bg-[#C5A059] mx-auto rounded-full" />
           <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-            Filter by product category, sub-category, or search by SKU to explore our premium corporate gift collection.
+            Showing top curated items. Filter by category, sub-category, or search by SKU.
           </p>
         </div>
 
@@ -131,7 +164,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-xs text-gray-400 hover:text-white"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-xs text-gray-400 hover:text-white cursor-pointer"
                 >
                   Clear
                 </button>
@@ -141,7 +174,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             {/* Results Count & Reset Button */}
             <div className="flex items-center space-x-3 justify-between md:justify-end">
               <span className="text-xs text-gray-300 font-medium bg-[#152B52] px-3 py-2 rounded border border-gray-700 whitespace-nowrap">
-                Showing <strong className="text-[#C5A059]">{filteredProducts.length}</strong> of {products.length} Products
+                Showing <strong className="text-[#C5A059]">{displayedProducts.length}</strong> of {filteredProducts.length} Products
               </span>
 
               {(selectedCategory !== 'ALL' || selectedSubCategory !== 'ALL' || searchQuery !== '') && (
@@ -177,7 +210,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               </button>
 
               {categories.map((cat) => {
-                const count = products.filter((p) => p.category === cat).length;
+                const count = products.filter((p) => p.category.trim() === cat).length;
                 return (
                   <button
                     key={cat}
@@ -214,19 +247,25 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                 >
                   All Sub-categories
                 </button>
-                {subCategories.map((subCat) => (
-                  <button
-                    key={subCat}
-                    onClick={() => setSelectedSubCategory(subCat)}
-                    className={`px-3 py-1 rounded text-xs transition-colors cursor-pointer ${
-                      selectedSubCategory === subCat
-                        ? 'bg-[#C5A059] text-[#1A1A1A] font-bold'
-                        : 'bg-[#152B52]/40 text-gray-300 hover:bg-[#152B52] border border-gray-800'
-                    }`}
-                  >
-                    {subCat}
-                  </button>
-                ))}
+                {subCategories.map((subCat) => {
+                  const subCount = products.filter((p) => {
+                    const matchesCat = selectedCategory === 'ALL' || p.category.trim() === selectedCategory;
+                    return matchesCat && p.sub_category.trim() === subCat;
+                  }).length;
+                  return (
+                    <button
+                      key={subCat}
+                      onClick={() => setSelectedSubCategory(subCat)}
+                      className={`px-3 py-1 rounded text-xs transition-colors cursor-pointer ${
+                        selectedSubCategory === subCat
+                          ? 'bg-[#C5A059] text-[#1A1A1A] font-bold'
+                          : 'bg-[#152B52]/40 text-gray-300 hover:bg-[#152B52] border border-gray-800'
+                      }`}
+                    >
+                      {subCat} ({subCount})
+                    </button>
+                  );
+                })}
               </div>
             </div>
           )}
@@ -257,17 +296,51 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
         {/* Products Grid */}
         {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => (
-              <ProductCard
-                key={product.sku}
-                product={product}
-                onSelect={onSelectProduct}
-                onAddToQuote={onAddToQuote}
-                isInQuote={quoteSkuSet.has(product.sku)}
-              />
-            ))}
-          </div>
+          <>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {displayedProducts.map((product, idx) => (
+                <ProductCard
+                  key={`${product.sku}-${idx}`}
+                  product={product}
+                  onSelect={onSelectProduct}
+                  onAddToQuote={onAddToQuote}
+                  isInQuote={quoteSkuSet.has(product.sku)}
+                />
+              ))}
+            </div>
+
+            {/* View More / View All / Show Less Pagination Actions */}
+            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 border-t border-[#152B52] pt-8">
+              {visibleCount < filteredProducts.length ? (
+                <>
+                  <button
+                    onClick={handleLoadMore}
+                    className="bg-gradient-to-r from-[#0052CC] to-[#0043A8] hover:from-[#0043A8] hover:to-[#00388A] text-white font-semibold text-sm px-7 py-3 rounded-md shadow-lg transition-all flex items-center space-x-2 cursor-pointer border border-[#0052CC]/50 group"
+                  >
+                    <span>View More Products (+8)</span>
+                    <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+                  </button>
+
+                  <button
+                    onClick={handleShowAll}
+                    className="bg-[#152B52]/60 hover:bg-[#152B52] text-[#C5A059] hover:text-white font-semibold text-sm px-6 py-3 rounded-md border border-[#C5A059]/40 hover:border-[#C5A059] transition-colors cursor-pointer"
+                  >
+                    Show All ({filteredProducts.length} Items)
+                  </button>
+                </>
+              ) : (
+                filteredProducts.length > 8 && (
+                  <button
+                    onClick={handleShowLess}
+                    className="bg-[#152B52]/60 hover:bg-[#152B52] text-gray-300 hover:text-white font-semibold text-sm px-6 py-3 rounded-md border border-gray-700 transition-colors flex items-center space-x-2 cursor-pointer"
+                  >
+                    <span>Show Top 8 Only</span>
+                    <ChevronUp className="w-4 h-4" />
+                  </button>
+                )
+              )}
+            </div>
+          </>
         ) : (
           /* Empty Search State */
           <div className="bg-[#071326] rounded-xl p-12 text-center border border-[#152B52] my-8 space-y-4">
@@ -280,7 +353,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             </p>
             <button
               onClick={resetFilters}
-              className="bg-[#0052CC] hover:bg-[#0043A8] text-white font-semibold text-xs px-5 py-2.5 rounded transition-colors"
+              className="bg-[#0052CC] hover:bg-[#0043A8] text-white font-semibold text-xs px-5 py-2.5 rounded transition-colors cursor-pointer"
             >
               Reset All Filters
             </button>

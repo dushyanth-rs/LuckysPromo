@@ -730,7 +730,7 @@
     "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1016"
   },
   {
-    "sku": "SRG-PN-1036",
+    "sku": "SRG-PN-1036-B",
     "category": "Pens & Writing",
     "sub_category": "Eco-Friendly Pens",
     "name": "Bamboo Pen",
@@ -740,7 +740,7 @@
     "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1036"
   },
   {
-    "sku": "SRG-PN-1047",
+    "sku": "SRG-PN-1047-B",
     "category": "Pens & Writing",
     "sub_category": "Fidget Pens",
     "name": "Stress Relief Pen",
@@ -760,7 +760,7 @@
     "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-KC-1004"
   },
   {
-    "sku": "SRG-KC-1005",
+    "sku": "SRG-KC-1005-B",
     "category": "Keychains & Card Holders",
     "sub_category": "Metal Keychains",
     "name": "Bottle Opener Keychain",
