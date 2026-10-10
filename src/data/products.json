@@ -7,7 +7,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:14"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:02",
@@ -17,7 +17,7 @@
     "specs": "A6 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:02"
+    "image": "/products/pocket-notebook-diary.jpg"
   },
   {
     "sku": "NO:67",
@@ -27,7 +27,7 @@
     "specs": "A5 Size, 160/192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:67"
+    "image": "/products/engrave-colour-changer-notebook.jpg"
   },
   {
     "sku": "SRG-NB-105-CORK",
@@ -37,7 +37,7 @@
     "specs": "160 Pages",
     "material": "Cork",
     "colors": "Natural Cork",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-NB-105+Cork"
+    "image": "/products/SRG-NB-105-CORK.png"
   },
   {
     "sku": "SRG-NB-106",
@@ -47,7 +47,7 @@
     "specs": "200 Pages, 80 GSM",
     "material": "Thermal PU",
     "colors": "Black, Grey, Red, Blue",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-NB-106"
+    "image": "/products/SRG-NB-106.png"
   },
   {
     "sku": "SRG-NB-127",
@@ -57,7 +57,7 @@
     "specs": "192 Pages, Removable Book",
     "material": "Thermal PU",
     "colors": "Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-NB-127"
+    "image": "/products/organiser-notebook.jpg"
   },
   {
     "sku": "SRG-NB-PL-1",
@@ -67,7 +67,7 @@
     "specs": "10000MAH Power Bank Built-in",
     "material": "PU Leather",
     "colors": "Black, Brown",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-NB-PL+1"
+    "image": "/products/SRG-NB-PL-1.png"
   },
   {
     "sku": "SRG-033",
@@ -77,7 +77,7 @@
     "specs": "500ml, Hot/Cold 12 Hrs",
     "material": "304 Stainless Steel",
     "colors": "Black, Olive",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-033"
+    "image": "/products/SRG-033.png"
   },
   {
     "sku": "SRG-039",
@@ -87,7 +87,7 @@
     "specs": "500ml, Hot/Cold 12 Hrs",
     "material": "304 Stainless Steel & Bamboo",
     "colors": "Black, White",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-039"
+    "image": "/products/SRG-039.png"
   },
   {
     "sku": "SR-2001",
@@ -97,7 +97,7 @@
     "specs": "500ml, LED Cap Display",
     "material": "304 Stainless Steel",
     "colors": "Black, Blue, White",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SR-2001"
+    "image": "/products/SR-2001.png"
   },
   {
     "sku": "SRG-UV-SIP",
@@ -107,7 +107,7 @@
     "specs": "1000ml, 999.99% Sterilization",
     "material": "304 Stainless Steel",
     "colors": "Black, Blue, Grey",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-UV+Sip"
+    "image": "/products/SRG-UV-SIP.png"
   },
   {
     "sku": "SRTC-H101",
@@ -117,7 +117,7 @@
     "specs": "750ml Capacity",
     "material": "Stainless Steel",
     "colors": "Steel",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H101"
+    "image": "/products/SRTC-H101.png"
   },
   {
     "sku": "SRTC-H01",
@@ -127,7 +127,7 @@
     "specs": "Magnet Flap Diary, Pen, Keychain",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H01"
+    "image": "/products/SRTC-H01.png"
   },
   {
     "sku": "SRTC-H37",
@@ -137,7 +137,7 @@
     "specs": "Magnet Flap Diary, Metal Ball Pen, Metal Keychain, Stainless Steel Water Bottle 750ml",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H37"
+    "image": "/products/SRTC-H37.png"
   },
   {
     "sku": "SRTC-H67",
@@ -147,7 +147,7 @@
     "specs": "Bamboo Coffee Mug, Bamboo Vacuum Flask 450 ml, Bamboo Pen & Keychain",
     "material": "Real Bamboo",
     "colors": "Natural Bamboo",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H67"
+    "image": "/products/SRTC-H67.png"
   },
   {
     "sku": "SRTC-H69",
@@ -157,7 +157,7 @@
     "specs": "Vacuum Coffee Mug, Magnet Loop Diary, Metal Pen, Metal Keychain, Vacuum Flask Water Bottle 500ml",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H69"
+    "image": "/products/SRTC-H69.png"
   },
   {
     "sku": "SRTC-H76",
@@ -167,7 +167,7 @@
     "specs": "500ml Vacuum Bottle, Metal Keychain, Metal Ball Pen, Note Book",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H76"
+    "image": "/products/SRTC-H76.png"
   },
   {
     "sku": "SRG-PN-1001",
@@ -177,7 +177,7 @@
     "specs": "Metal Clip, Ballpoint",
     "material": "Metal",
     "colors": "Black, Full Black, Blue, Red",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1001"
+    "image": "/products/SRG-PN-1001.png"
   },
   {
     "sku": "SRG-PN-1006",
@@ -187,7 +187,7 @@
     "specs": "Gold Trim, Ballpoint",
     "material": "Metal",
     "colors": "Black Gold",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1006"
+    "image": "/products/SRG-PN-1006.png"
   },
   {
     "sku": "SRG-PN-1024",
@@ -197,7 +197,7 @@
     "specs": "Ruler, Stylus, Tool Functions",
     "material": "Metal",
     "colors": "Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1024"
+    "image": "/products/SRG-PN-1024.png"
   },
   {
     "sku": "SRG-PN-1036",
@@ -207,7 +207,7 @@
     "specs": "Click Mechanism",
     "material": "Bamboo",
     "colors": "Natural Bamboo",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1036"
+    "image": "/products/SRG-PN-1036.png"
   },
   {
     "sku": "SRG-PN-1047",
@@ -217,7 +217,7 @@
     "specs": "Rotate to Stress Relief",
     "material": "Metal/Plastic",
     "colors": "Black, Blue, Grey",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1047"
+    "image": "/products/SRG-PN-1047.png"
   },
   {
     "sku": "SRG-CH-1001",
@@ -227,7 +227,7 @@
     "specs": "Magnetic Flip Closure",
     "material": "PU Leather / Cork",
     "colors": "Black, White, Cork, Grey, Red, Brown, Blue",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-CH-1001"
+    "image": "/products/SRG-CH-1001.png"
   },
   {
     "sku": "SRG-CH-1009",
@@ -237,7 +237,7 @@
     "specs": "Eco-friendly Card Case",
     "material": "Bamboo",
     "colors": "Natural Bamboo",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-CH-1009"
+    "image": "/products/SRG-CH-1009.png"
   },
   {
     "sku": "SRG-KC-1005",
@@ -247,7 +247,7 @@
     "specs": "Carabiner clip design",
     "material": "Metal",
     "colors": "Black, Blue, Red",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-KC-1005"
+    "image": "/products/SRG-KC-1005.png"
   },
   {
     "sku": "SRG-TH-1006",
@@ -257,7 +257,7 @@
     "specs": "Wireless Connectivity",
     "material": "Bamboo",
     "colors": "Natural Bamboo/Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-TH-1006"
+    "image": "/products/SRG-TH-1006.png"
   },
   {
     "sku": "SRG-DT-1100",
@@ -267,7 +267,7 @@
     "specs": "Desktop phone/tablet holder",
     "material": "Metal",
     "colors": "Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-DT-1100"
+    "image": "/products/SRG-DT-1100.png"
   },
   {
     "sku": "NO:03",
@@ -277,7 +277,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:03"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:04",
@@ -287,7 +287,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:04"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:07",
@@ -297,7 +297,7 @@
     "specs": "A5 Size, 160 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:07"
+    "image": "/products/elastic-note-diary.jpg"
   },
   {
     "sku": "NO:08",
@@ -307,7 +307,7 @@
     "specs": "A5 Size, 160 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:08"
+    "image": "/products/elastic-note-diary.jpg"
   },
   {
     "sku": "NO:09",
@@ -317,7 +317,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:09"
+    "image": "/products/elastic-note-diary.jpg"
   },
   {
     "sku": "NO:12",
@@ -327,7 +327,7 @@
     "specs": "A5 Size",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:12"
+    "image": "/products/mobile-pocket-diary.jpg"
   },
   {
     "sku": "NO:16",
@@ -337,7 +337,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:16"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:17",
@@ -347,7 +347,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:17"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:18",
@@ -357,7 +357,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:18"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:20",
@@ -367,7 +367,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:20"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:26",
@@ -377,7 +377,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:26"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:28",
@@ -387,7 +387,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:28"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:30",
@@ -397,7 +397,7 @@
     "specs": "A5 Size, 192 Pages, Manual Closure",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:30"
+    "image": "/products/diary-multi-card-pockets.jpg"
   },
   {
     "sku": "NO:33",
@@ -407,7 +407,7 @@
     "specs": "A5 Size, 192 Pages, Magnetic Closure",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:33"
+    "image": "/products/diary-multi-card-pockets.jpg"
   },
   {
     "sku": "NO:38",
@@ -417,7 +417,7 @@
     "specs": "A5 Size, 192 Pages, Magnetic Closure",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:38"
+    "image": "/products/mobile-pocket-diary.jpg"
   },
   {
     "sku": "NO:41",
@@ -427,7 +427,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:41"
+    "image": "/products/elastic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:42",
@@ -437,7 +437,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:42"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:43",
@@ -447,7 +447,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:43"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:45",
@@ -457,7 +457,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:45"
+    "image": "/products/magnetic-pu-leather-diary.jpg"
   },
   {
     "sku": "NO:51",
@@ -467,7 +467,7 @@
     "specs": "A5 Size",
     "material": "Wooden PU Finish",
     "colors": "Wood",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:51"
+    "image": "/products/wooden-diary.jpg"
   },
   {
     "sku": "NO:55",
@@ -477,7 +477,7 @@
     "specs": "A5 Cut Size, 192 Pages, Magnetic Closure",
     "material": "Wooden PU Finish",
     "colors": "Wood",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:55"
+    "image": "/products/wooden-diary.jpg"
   },
   {
     "sku": "NO:61",
@@ -487,7 +487,7 @@
     "specs": "A5 Size, 192 Pages",
     "material": "PU Leather",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:61"
+    "image": "/products/elastic-diary.jpg"
   },
   {
     "sku": "NO:63",
@@ -497,7 +497,7 @@
     "specs": "A5 Size, 192 Pages, Golden Magnetic Closure",
     "material": "PU Material",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:63"
+    "image": "/products/golden-fitting-notebook.jpg"
   },
   {
     "sku": "NO:64",
@@ -507,7 +507,7 @@
     "specs": "A5 Size, 192 Pages, Golden Magnetic Closure",
     "material": "PU Material",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=NO:64"
+    "image": "/products/golden-fitting-notebook.jpg"
   },
   {
     "sku": "SRTC-H02",
@@ -517,7 +517,7 @@
     "specs": "Magnet Flap Diary, Pen, Keychain",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H02"
+    "image": "/products/SRTC-H02.png"
   },
   {
     "sku": "SRTC-H38",
@@ -527,7 +527,7 @@
     "specs": "Magnet Flap Diary, Metal Ball Pen, Metal Keychain, Stainless Steel Water Bottle 750ml",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H38"
+    "image": "/products/executive-4in1-giftset.jpg"
   },
   {
     "sku": "SRTC-H39",
@@ -537,7 +537,7 @@
     "specs": "Elastic Flap Diary, Metal Ball Pen, Metal Keychain, Stainless Steel Water Bottle 750ml",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H39"
+    "image": "/products/executive-4in1-giftset.jpg"
   },
   {
     "sku": "SRTC-H48",
@@ -547,7 +547,7 @@
     "specs": "Elastic Flap Diary, Metal Ball Pen, Metal Keychain, Metal Water Bottle 750ml",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H48"
+    "image": "/products/executive-4in1-giftset.jpg"
   },
   {
     "sku": "SRTC-H53",
@@ -557,7 +557,7 @@
     "specs": "Magnet Loop Diary, Metal Ball Pen, Metal Keychain, Steel Water Bottle 750ml",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H53"
+    "image": "/products/executive-4in1-giftset.jpg"
   },
   {
     "sku": "SRTC-H55",
@@ -567,7 +567,7 @@
     "specs": "Elastic Strap Diary, Metal Pen, Keychain, Temperature Display Vacuum Water Bottle 500ml",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H55"
+    "image": "/products/SRTC-H55.png"
   },
   {
     "sku": "SRTC-H66",
@@ -577,7 +577,7 @@
     "specs": "Bamboo Vacuum Flask 500ml, Bamboo Diary, Bamboo Pen, Metal Keychain",
     "material": "Bamboo & Metal",
     "colors": "Natural Bamboo",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H66"
+    "image": "/products/SRTC-H66.png"
   },
   {
     "sku": "SRTC-H70",
@@ -587,7 +587,7 @@
     "specs": "Steel Coffee Mug, Elastic Strap Dairy, Metal Pen, Metal Keychain, Temperature Display Water Bottle 500ml",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H70"
+    "image": "/products/SRTC-H70.png"
   },
   {
     "sku": "SRTC-H78",
@@ -597,7 +597,7 @@
     "specs": "Metal Keychain, Metal Ball Pen with Stylus",
     "material": "Metal",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H78"
+    "image": "/products/SRTC-H78.png"
   },
   {
     "sku": "SRTC-H87",
@@ -607,7 +607,7 @@
     "specs": "Metal Pen, Revolving Metal Keychain",
     "material": "Metal",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRTC-H87"
+    "image": "/products/SRTC-H87.png"
   },
   {
     "sku": "SRG-042",
@@ -617,7 +617,7 @@
     "specs": "500ml, Double wall-Hot & Cold upto 12 hours",
     "material": "304 Stainless Steel",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-042"
+    "image": "/products/SRG-042.png"
   },
   {
     "sku": "SRG-044-BOTTLE",
@@ -627,7 +627,7 @@
     "specs": "500ml, Handle to carry",
     "material": "304 Stainless Steel",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-044"
+    "image": "/products/push-button-thermos.jpg"
   },
   {
     "sku": "SRG-2005",
@@ -637,7 +637,7 @@
     "specs": "750ml, Screw lid with Silicon Holder",
     "material": "304 Stainless Steel",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-2005"
+    "image": "/products/SRG-2005.png"
   },
   {
     "sku": "SRG-3002-500ML",
@@ -647,7 +647,7 @@
     "specs": "500ml, Screw lid with Infuser",
     "material": "304 Stainless Steel",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-3002"
+    "image": "/products/SRG-3002-500ML.png"
   },
   {
     "sku": "SRG-COLA-500",
@@ -657,7 +657,7 @@
     "specs": "500ml, Hot and cold 8 hours",
     "material": "304 Stainless Steel",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=Cola+500"
+    "image": "/products/SRG-COLA-500.png"
   },
   {
     "sku": "SRG-009",
@@ -667,7 +667,7 @@
     "specs": "600ml, Single wall",
     "material": "201 Steel",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-009"
+    "image": "/products/SRG-009.png"
   },
   {
     "sku": "SRG-DG-022",
@@ -677,7 +677,7 @@
     "specs": "750ml, Single wall",
     "material": "304 Stainless Steel",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-DG-022"
+    "image": "/products/SRG-DG-022.png"
   },
   {
     "sku": "SRG-1013-1000ML",
@@ -687,7 +687,7 @@
     "specs": "1000ml, Single wall",
     "material": "201 Steel",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-1013"
+    "image": "/products/SRG-1013-1000ML.png"
   },
   {
     "sku": "SRG-032",
@@ -697,7 +697,7 @@
     "specs": "380ml, Hot and cold 8 hours",
     "material": "304 Stainless Steel",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-032"
+    "image": "/products/SRG-032.png"
   },
   {
     "sku": "SRG-050-1200",
@@ -707,7 +707,7 @@
     "specs": "1200ml, Double wall-Hot & Cold upto 4 hours",
     "material": "304 Stainless Steel",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-050"
+    "image": "/products/thermos-mug-metal-straw.jpg"
   },
   {
     "sku": "SRG-PN-1008",
@@ -717,7 +717,7 @@
     "specs": "Ballpoint, Twist Mechanism",
     "material": "Metal",
     "colors": "Black Gold, Black Silver, Full Black, Silver Rose",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1008"
+    "image": "/products/SRG-PN-1008.png"
   },
   {
     "sku": "SRG-PN-1016",
@@ -727,7 +727,7 @@
     "specs": "Ballpoint, Click Mechanism",
     "material": "Metal",
     "colors": "Black Grey, Black Rose, Black Silver, Grey, White Silver, Blue Grey, Brown, Tan, Tan Grey, White Black, White Grey",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1016"
+    "image": "/products/SRG-PN-1016.png"
   },
   {
     "sku": "SRG-PN-1036-B",
@@ -737,7 +737,7 @@
     "specs": "Click Mechanism",
     "material": "Bamboo",
     "colors": "Bamboo",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1036"
+    "image": "/products/bamboo-pen.jpg"
   },
   {
     "sku": "SRG-PN-1047-B",
@@ -747,7 +747,7 @@
     "specs": "Rotate to Stress Relief/Fidget",
     "material": "Metal & Plastic",
     "colors": "Black, Blue, Grey",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1047"
+    "image": "/products/stress-relief-pen.jpg"
   },
   {
     "sku": "SRG-KC-1004",
@@ -757,7 +757,7 @@
     "specs": "Metal Keyring",
     "material": "Metal & Leatherette",
     "colors": "Black, Blue, Gold, Red, Tan, White",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-KC-1004"
+    "image": "/products/SRG-KC-1004.png"
   },
   {
     "sku": "SRG-KC-1005-B",
@@ -767,7 +767,7 @@
     "specs": "Carabiner clip with bottle opener",
     "material": "Metal",
     "colors": "Black, Blue, Red",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-KC-1005"
+    "image": "/products/bottle-opener-keychain.jpg"
   },
   {
     "sku": "SRG-KC-1008",
@@ -777,7 +777,7 @@
     "specs": "Rectangular bamboo tag",
     "material": "Bamboo",
     "colors": "Bamboo",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-KC-1008"
+    "image": "/products/SRG-KC-1008.png"
   },
   {
     "sku": "SRG-CR-101",
@@ -787,7 +787,7 @@
     "specs": "3MM Thickness",
     "material": "Cork",
     "colors": "Natural Cork",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-CR-101"
+    "image": "/products/SRG-CR-101.png"
   },
   {
     "sku": "SRG-049",
@@ -797,7 +797,7 @@
     "specs": "500ml, Metal LID with Rope",
     "material": "Borosilicate Glass & Fabric",
     "colors": "Black, Blue, Grey, White",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-049"
+    "image": "/products/SRG-049.png"
   },
   {
     "sku": "SRG-GLB-1",
@@ -807,7 +807,7 @@
     "specs": "350ml, Screw LID",
     "material": "Glass & Wheat Straw",
     "colors": "Blue, Pink, Beige",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-GLB-1"
+    "image": "/products/SRG-GLB-1.png"
   },
   {
     "sku": "SRG-CERAMIC-CORK",
@@ -817,7 +817,7 @@
     "specs": "350ml, Flip Lid",
     "material": "Ceramic & Cork",
     "colors": "Black, Brown",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=Ceramic+Cork"
+    "image": "/products/ceramic-cork-mug.jpg"
   },
   {
     "sku": "SRG-ECO-MUG",
@@ -827,7 +827,7 @@
     "specs": "350ml",
     "material": "Rice Husk",
     "colors": "Natural",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-ECO-MUG"
+    "image": "/products/SRG-ECO-MUG.png"
   },
   {
     "sku": "LANYARD-01",
@@ -837,7 +837,7 @@
     "specs": "Clip and hook attachments",
     "material": "Fabric",
     "colors": "Blue, Black, Grey, Red",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=Lanyards"
+    "image": "/products/neck-lanyard.jpg"
   },
   {
     "sku": "POUCH-01",
@@ -847,7 +847,7 @@
     "specs": "Flap and button closure",
     "material": "Fabric",
     "colors": "Olive-green",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=Pouches"
+    "image": "/products/envelope-pouch.jpg"
   },
   {
     "sku": "WLT-01",
@@ -857,7 +857,7 @@
     "specs": "Includes gift box",
     "material": "Leather",
     "colors": "Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=Wallets"
+    "image": "/products/leather-wallet.jpg"
   },
   {
     "sku": "JUTE-01",
@@ -867,7 +867,7 @@
     "specs": "Eco-friendly option",
     "material": "Jute / Canvas",
     "colors": "Natural",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=Jute+Bags"
+    "image": "/products/jute-tote-bag.jpg"
   },
   {
     "sku": "BP-01",
@@ -877,7 +877,7 @@
     "specs": "Front logo area",
     "material": "Fabric",
     "colors": "Grey, Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=Backpacks"
+    "image": "/products/employee-backpack.jpg"
   },
   {
     "sku": "CERT-01",
@@ -887,7 +887,7 @@
     "specs": "Framed or in folders",
     "material": "Paper / Frame",
     "colors": "Custom",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=Certificates"
+    "image": "/products/appreciation-certificate.jpg"
   },
   {
     "sku": "USB-01",
@@ -897,7 +897,7 @@
     "specs": "Logo branding",
     "material": "Metal, Wood, Plastic",
     "colors": "Black, Metal, Wood",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=Pendrives"
+    "image": "/products/usb-flash-drive.jpg"
   },
   {
     "sku": "PB-01",
@@ -907,7 +907,7 @@
     "specs": "Digital display, USB-C",
     "material": "Mixed",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=Power+Banks"
+    "image": "/products/power-bank.jpg"
   },
   {
     "sku": "SRG-PN-1010",
@@ -917,7 +917,7 @@
     "specs": "Ballpoint",
     "material": "Metal",
     "colors": "Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1010"
+    "image": "/products/SRG-PN-1010.png"
   },
   {
     "sku": "SRG-PN-1012",
@@ -927,7 +927,7 @@
     "specs": "Ballpoint",
     "material": "Metal",
     "colors": "Black, White",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1012"
+    "image": "/products/SRG-PN-1012.png"
   },
   {
     "sku": "SRG-PN-1017",
@@ -937,7 +937,7 @@
     "specs": "Click Mechanism",
     "material": "Bamboo",
     "colors": "Natural Bamboo",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1017"
+    "image": "/products/SRG-PN-1017.png"
   },
   {
     "sku": "SRG-PN-1020",
@@ -947,7 +947,7 @@
     "specs": "Ballpoint",
     "material": "Metal",
     "colors": "Black, Blue",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1020"
+    "image": "/products/SRG-PN-1020.png"
   },
   {
     "sku": "SRG-PN-1021",
@@ -957,7 +957,7 @@
     "specs": "Ballpoint",
     "material": "Metal & PU",
     "colors": "Black, Tan",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1021"
+    "image": "/products/SRG-PN-1021.png"
   },
   {
     "sku": "SRG-PN-1025",
@@ -967,7 +967,7 @@
     "specs": "Ballpoint, Chrome Accents",
     "material": "Metal / Bamboo",
     "colors": "Black, Grey, Red, White, Bamboo",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1025"
+    "image": "/products/SRG-PN-1025.png"
   },
   {
     "sku": "SRG-PN-1028",
@@ -977,7 +977,7 @@
     "specs": "Ballpoint",
     "material": "Metal",
     "colors": "Black, Red, Tan, Blue",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1028"
+    "image": "/products/SRG-PN-1028.png"
   },
   {
     "sku": "SRG-PN-1029",
@@ -987,7 +987,7 @@
     "specs": "Ballpoint",
     "material": "Metal",
     "colors": "Black, Red, Green, Tan, Blue",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1029"
+    "image": "/products/SRG-PN-1029.png"
   },
   {
     "sku": "SRG-PN-1031",
@@ -997,7 +997,7 @@
     "specs": "Ballpoint",
     "material": "Metal",
     "colors": "Black, Blue, Red",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1031"
+    "image": "/products/SRG-PN-1031.png"
   },
   {
     "sku": "SRG-PN-1032",
@@ -1007,7 +1007,7 @@
     "specs": "Magnetic Closure Cap",
     "material": "Metal",
     "colors": "Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1032"
+    "image": "/products/magnetic-closure-pen.jpg"
   },
   {
     "sku": "SRG-PN-1034",
@@ -1017,7 +1017,7 @@
     "specs": "Ballpoint",
     "material": "Metal",
     "colors": "Black Rose, Blue Rose, Black, Blue",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1034"
+    "image": "/products/textured-grip-pen.jpg"
   },
   {
     "sku": "SRG-PN-1051",
@@ -1027,7 +1027,7 @@
     "specs": "Ballpoint",
     "material": "Metal",
     "colors": "Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-PN-1051"
+    "image": "/products/SRG-PN-1051.png"
   },
   {
     "sku": "SRG-CH-1002",
@@ -1037,7 +1037,7 @@
     "specs": "Flip opening",
     "material": "PU Leather & Metal",
     "colors": "Black Gold",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-CH-1002"
+    "image": "/products/SRG-CH-1002.png"
   },
   {
     "sku": "SRG-CH-1003",
@@ -1047,7 +1047,7 @@
     "specs": "Flip opening",
     "material": "PU Leather & Metal",
     "colors": "Blue, Brown",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-CH-1003"
+    "image": "/products/SRG-CH-1003.png"
   },
   {
     "sku": "SRG-CH-1004",
@@ -1057,7 +1057,7 @@
     "specs": "Flip opening",
     "material": "PU Leather & Metal",
     "colors": "White, Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-CH-1004"
+    "image": "/products/SRG-CH-1004.png"
   },
   {
     "sku": "SRG-CH-1006",
@@ -1067,7 +1067,7 @@
     "specs": "Flip opening",
     "material": "PU Leather & Metal",
     "colors": "Brown, Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-CH-1006"
+    "image": "/products/SRG-CH-1006.png"
   },
   {
     "sku": "SRG-KC-1001",
@@ -1077,7 +1077,7 @@
     "specs": "Standard Keyring",
     "material": "Metal & Leatherette",
     "colors": "Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-KC-1001"
+    "image": "/products/SRG-KC-1001.png"
   },
   {
     "sku": "SRG-KC-1009",
@@ -1087,7 +1087,7 @@
     "specs": "Standard Keyring",
     "material": "Metal & Leatherette",
     "colors": "Black, Blue, Gold, Tan, Brown",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-KC-1009"
+    "image": "/products/SRG-KC-1009.png"
   },
   {
     "sku": "SRG-KC-1022",
@@ -1097,7 +1097,7 @@
     "specs": "Standard Keyring",
     "material": "Metal & Leatherette",
     "colors": "Black, Blue",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-KC-1022"
+    "image": "/products/SRG-KC-1022.png"
   },
   {
     "sku": "SRG-DT-1090",
@@ -1107,7 +1107,7 @@
     "specs": "Pen holder, clock, and calendar blocks",
     "material": "Wood",
     "colors": "Natural Wood",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-DT-1090"
+    "image": "/products/SRG-DT-1090.png"
   },
   {
     "sku": "SRG-TH-1104",
@@ -1117,7 +1117,7 @@
     "specs": "Can be used on Office Desk, Bus, Flight & Train",
     "material": "Mixed Tech",
     "colors": "Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-TH-1104"
+    "image": "/products/SRG-TH-1104.png"
   },
   {
     "sku": "SRG-TH-1001",
@@ -1127,7 +1127,7 @@
     "specs": "Multiple cable slots",
     "material": "Silicone/Plastic",
     "colors": "Black with wood accent",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-TH-1001"
+    "image": "/products/SRG-TH-1001.png"
   },
   {
     "sku": "SRG-TH-1009",
@@ -1137,7 +1137,7 @@
     "specs": "Integrated phone stand/tray",
     "material": "PET",
     "colors": "Grey & Bamboo",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-TH-1009"
+    "image": "/products/SRG-TH-1009.png"
   },
   {
     "sku": "SRG-108-SET",
@@ -1147,7 +1147,7 @@
     "specs": "Ruler, Pen, and Bookmark",
     "material": "Metal",
     "colors": "Silver, Black",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-108+Set"
+    "image": "/products/SRG-108-SET.png"
   },
   {
     "sku": "SRG-CH-1013",
@@ -1157,7 +1157,7 @@
     "specs": "Multi-slot",
     "material": "PU Leather & Cork",
     "colors": "Black with Cork",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=SRG-CH-1013"
+    "image": "/products/SRG-CH-1013.png"
   },
   {
     "sku": "PIX-PH-1001",
@@ -1167,6 +1167,6 @@
     "specs": "Slots for Passport, 2 SIMs, Credit Card, Boarding Pass",
     "material": "Thermal PU",
     "colors": "Assorted",
-    "image": "https://placehold.co/400x400/FFFFFF/0B1D3A?text=PIX-PH-1001"
+    "image": "/products/passport-holder.jpg"
   }
 ]
