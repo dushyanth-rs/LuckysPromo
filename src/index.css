@@ -13,6 +13,12 @@
     scroll-behavior: smooth;
     scroll-padding-top: 96px; /* offset for the sticky h-24 header so section tops aren't hidden under it */
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    /* Reserve scrollbar space on every page so the viewport width CSS sees
+       is consistent whether or not a given page's content is tall enough to
+       scroll - otherwise a short page (no scrollbar) and a tall page (has
+       one) can land on opposite sides of a breakpoint at the same window
+       size, making the shared header render at different sizes per page. */
+    scrollbar-gutter: stable;
   }
 
   body {
