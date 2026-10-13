@@ -1,0 +1,16 @@
+# Luckys Promo
+
+> Luckys Promo is a corporate gifting and promotional merchandise company based in Bengaluru, India, operated as a venture of Manpointe Tech LLP. We supply customized corporate gift sets, executive diaries, drinkware, pens, keychains, bags, and tech accessories, with in-house logo printing (screen, digital, offset foil stamping, and UV printing) for bulk and enterprise orders across India.
+
+Key facts:
+- ISO 9001:2015 certified corporate supply partner
+- Minimum order quantities typically start at 50 units, with tiered bulk pricing
+- Pan-India doorstep delivery, with global shipping support
+- Contact: info@luckyspromo.com, +91 78920 81305, WhatsApp available
+- Address: Amrutahalli, Byatarayanapura, Bengaluru, Karnataka 560092
+
+## Pages
+
+- [Home](https://luckyspromo.com/): Overview, printing capabilities, core differentiators, FAQ, and the full product catalog
+- Product pages: https://luckyspromo.com/products/<slug> — one page per product with specs, material, available colors, and images
+- [Sitemap](https://luckyspromo.com/sitemap.xml): Full list of indexed pages

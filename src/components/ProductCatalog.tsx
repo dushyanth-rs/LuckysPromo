@@ -1,3 +1,4 @@
+'use client';
 import React, { useState, useMemo, useEffect } from 'react';
 import type { Product } from '../types/product';
 import { ProductCard } from './ProductCard';
@@ -20,16 +21,10 @@ const SEARCH_SYNONYMS: Record<string, string[]> = {
 
 interface ProductCatalogProps {
   products: Product[];
-  onSelectProduct: (product: Product) => void;
-  onAddToQuote: (product: Product) => void;
-  quoteItems: Product[];
 }
 
 export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   products,
-  onSelectProduct,
-  onAddToQuote,
-  quoteItems,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('ALL');
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>('ALL');
@@ -140,10 +135,6 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     return filteredProducts.slice(0, visibleCount);
   }, [filteredProducts, visibleCount]);
 
-  const quoteSkuSet = useMemo(() => {
-    return new Set(quoteItems.map((item) => item.sku));
-  }, [quoteItems]);
-
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 8);
   };
@@ -171,7 +162,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           </h2>
           <div className="w-20 h-1 bg-[#C5A059] mx-auto rounded-full" />
           <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-            Showing top curated items. Filter by category, sub-category, or search by SKU.
+            Browse {products.length}+ corporate gifts and promotional products — executive diaries, drinkware, pens, bags, keychains, and tech accessories, customizable with your logo. Filter by category or search by SKU, name, or material.
           </p>
         </div>
 
@@ -334,9 +325,6 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                 <ProductCard
                   key={`${product.sku}-${idx}`}
                   product={product}
-                  onSelect={onSelectProduct}
-                  onAddToQuote={onAddToQuote}
-                  isInQuote={quoteSkuSet.has(product.sku)}
                 />
               ))}
             </div>

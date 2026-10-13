@@ -1,5 +1,4 @@
 import React from 'react';
-import manpointeIcon from '../assets/manpointe-icon.png';
 
 interface ManpointeLogoProps {
   className?: string;
@@ -10,7 +9,7 @@ export const ManpointeLogo: React.FC<ManpointeLogoProps> = ({
 }) => {
   return (
     <img
-      src={manpointeIcon}
+      src="/manpointe-icon.png"
       alt="Manpointe Official Logo"
       className={`${className} object-contain`}
     />

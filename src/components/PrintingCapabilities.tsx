@@ -7,11 +7,11 @@ export const PrintingCapabilities: React.FC = () => {
       id: 'screen',
       title: 'Screen Printing',
       colorName: 'Trust Blue',
-      badgeBg: 'bg-[#0052CC]',
-      circleBorder: 'border-[#0052CC]',
-      glowColor: 'shadow-[#0052CC]/30',
-      iconColor: 'text-[#0052CC]',
-      accentBg: 'bg-[#0052CC]/10',
+      badgeBg: 'bg-[#0068C8]',
+      circleBorder: 'border-[#0068C8]',
+      glowColor: 'shadow-[#0068C8]/30',
+      iconColor: 'text-[#0068C8]',
+      accentBg: 'bg-[#0068C8]/10',
       tagline: 'High Volume & Vivid Spot Colors',
       materials: 'Fabrics, Canvas Bags, T-Shirts, Polymer',
       desc: 'Durable ink transfer ideal for bold logos and large quantity corporate apparel & tote orders.',
@@ -67,13 +67,13 @@ export const PrintingCapabilities: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-[#0052CC] font-bold text-xs uppercase tracking-widest bg-[#0052CC]/10 px-3 py-1 rounded-full border border-[#0052CC]/20">
+          <span className="text-[#0068C8] font-bold text-xs uppercase tracking-widest bg-[#0068C8]/10 px-3 py-1 rounded-full border border-[#0068C8]/20">
             Precision Customization Engineering
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1D3A] tracking-tight font-sans">
             We Print On All Type Of Materials
           </h2>
-          <div className="w-20 h-1 bg-[#C5A059] mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-[#0068C8] mx-auto rounded-full" />
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
             From stainless steel thermos bottles and leather diaries to eco-bamboo cardholders, our advanced printing infrastructure guarantees vibrant, durable, and brand-compliant logo reproduction.
           </p>
@@ -86,7 +86,7 @@ export const PrintingCapabilities: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className="bg-white rounded-xl p-6 text-center border border-gray-200 hover:border-[#C5A059]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group flex flex-col items-center justify-between"
+                className="bg-white rounded-xl p-6 text-center border border-gray-200 hover:border-[#0068C8]/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group flex flex-col items-center justify-between"
               >
                 {/* Top Section with Circular Placeholder */}
                 <div className="flex flex-col items-center space-y-4 w-full">
@@ -113,10 +113,10 @@ export const PrintingCapabilities: React.FC = () => {
 
                   {/* Title & Tagline */}
                   <div className="pt-2">
-                    <h3 className="text-xl font-bold text-[#0B1D3A] group-hover:text-[#0052CC] transition-colors">
+                    <h3 className="text-xl font-bold text-[#0B1D3A] group-hover:text-[#0068C8] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs font-semibold text-[#C5A059] mt-1">
+                    <p className="text-xs font-semibold text-[#0068C8] mt-1">
                       {item.tagline}
                     </p>
                   </div>
@@ -138,7 +138,7 @@ export const PrintingCapabilities: React.FC = () => {
                         key={i} 
                         className="inline-flex items-center text-[10px] bg-[#F4F5F7] text-gray-700 font-medium px-2 py-0.5 rounded border border-gray-200"
                       >
-                        <Check className="w-2.5 h-2.5 mr-1 text-[#0052CC]" />
+                        <Check className="w-2.5 h-2.5 mr-1 text-[#0068C8]" />
                         {mat}
                       </span>
                     ))}

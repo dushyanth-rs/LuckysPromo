@@ -11,6 +11,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 96px; /* offset for the sticky h-24 header so section tops aren't hidden under it */
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   }
 
@@ -24,6 +25,9 @@
 }
 
 @theme {
+  --color-brand-blue: #0068C8;
+  --color-brand-blue-hover: #0054A3;
+
   --color-corporate-navy: #0B1D3A;
   --color-navy-dark: #071326;
   --color-navy-light: #152B52;

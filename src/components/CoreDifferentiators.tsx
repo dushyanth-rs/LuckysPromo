@@ -47,13 +47,13 @@ export const CoreDifferentiators: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <span className="text-[#C5A059] font-bold text-xs uppercase tracking-widest bg-[#C5A059]/10 px-3 py-1 rounded-full border border-[#C5A059]/30">
+          <span className="text-[#0068C8] font-bold text-xs uppercase tracking-widest bg-[#0068C8]/10 px-3 py-1 rounded-full border border-[#0068C8]/20">
             Why Manpointe & Luckys Promo
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0B1D3A] tracking-tight font-sans">
             Everything Your Brand Needs, All in One Place.
           </h2>
-          <div className="w-20 h-1 bg-[#0052CC] mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-[#0068C8] mx-auto rounded-full" />
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
             We simplify corporate gifting with turn-key solutions built on reliability, aesthetic precision, and unmatched corporate standards.
           </p>
@@ -66,21 +66,21 @@ export const CoreDifferentiators: React.FC = () => {
             return (
               <div
                 key={item.num}
-                className="bg-[#F4F5F7] rounded-lg p-6 border border-gray-200/80 hover:border-[#C5A059]/60 hover:bg-white transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col justify-between"
+                className="bg-white rounded-lg p-6 border border-gray-200 hover:border-[#0068C8]/50 transition-all duration-300 shadow-sm hover:shadow-md group flex flex-col justify-between"
               >
                 <div>
                   {/* Top Row: Number Badge & Icon */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[#0B1D3A] font-mono text-sm font-bold bg-white px-3 py-1 rounded border border-gray-300 shadow-2xs group-hover:bg-[#0052CC] group-hover:text-white transition-colors">
+                    <span className="text-[#0B1D3A] font-mono text-sm font-bold bg-gray-50 px-3 py-1 rounded border border-gray-300 shadow-2xs group-hover:bg-[#0068C8] group-hover:text-white transition-colors">
                       {item.num}
                     </span>
-                    <div className="w-10 h-10 rounded-lg bg-white border border-gray-200 flex items-center justify-center group-hover:border-[#C5A059] transition-colors">
-                      <Icon className="w-5 h-5 text-[#0052CC] group-hover:text-[#C5A059] transition-colors" />
+                    <div className="w-10 h-10 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center group-hover:border-[#0068C8]/50 transition-colors">
+                      <Icon className="w-5 h-5 text-[#0068C8] transition-colors" />
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-[#0B1D3A] mb-2 group-hover:text-[#0052CC] transition-colors">
+                  <h3 className="text-lg font-bold text-[#0B1D3A] mb-2 group-hover:text-[#0068C8] transition-colors">
                     {item.title}
                   </h3>
 
@@ -90,8 +90,8 @@ export const CoreDifferentiators: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Bottom Decorative Gold Line on Hover */}
-                <div className="mt-6 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-[#0052CC] via-[#C5A059] to-[#0052CC] transition-all duration-500 rounded-full" />
+                {/* Bottom Decorative Line on Hover */}
+                <div className="mt-6 h-0.5 w-0 group-hover:w-full bg-[#0068C8] transition-all duration-500 rounded-full" />
               </div>
             );
           })}
