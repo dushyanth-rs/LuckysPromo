@@ -5,6 +5,7 @@ import type { Product } from '../types/product';
 import { Eye, MessageCircle, Sparkles, Info } from 'lucide-react';
 import { productWhatsAppLink } from '../lib/whatsapp';
 import { skuToSlug } from '../lib/slug';
+import { getProductDisplayImage, getProductColorList } from '../lib/product-display';
 
 interface ProductCardProps {
   product: Product;
@@ -16,15 +17,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const [imageError, setImageError] = useState(false);
   const productHref = `/products/${skuToSlug(product.sku)}`;
 
-  // Parse colors into badges
-  const colorList = product.colors
-    ? product.colors.split(',').map((c) => c.trim())
-    : [];
-
-  // Enforce pure white background placeholder URL if needed
-  const imageUrl = product.image
-    ? product.image.replace('/1A1A1A/C5A059', '/FFFFFF/0B1D3A')
-    : `https://placehold.co/400x400/FFFFFF/0B1D3A?text=${encodeURIComponent(product.sku)}`;
+  const colorList = getProductColorList(product);
+  const imageUrl = getProductDisplayImage(product);
 
   return (
     <div className="bg-[#1A1A1A] rounded-xl overflow-hidden border border-gray-800 hover:border-[#0068C8] transition-all duration-300 shadow-lg hover:shadow-2xl flex flex-col justify-between group">

@@ -1,5 +1,6 @@
 import type { Product } from '../types/product';
 import { skuToSlug } from './slug';
+import { getProductAbsoluteImageUrl } from './product-display';
 
 export const SITE_URL = 'https://luckyspromo.com';
 
@@ -39,7 +40,7 @@ export function productSchema(product: Product) {
     sku: product.sku,
     category: product.category,
     description: `${product.specs} - ${product.material}. Available colors: ${product.colors}.`,
-    image: product.image.startsWith('http') ? product.image : `${SITE_URL}${product.image}`,
+    image: getProductAbsoluteImageUrl(product, SITE_URL),
     url: `${SITE_URL}/products/${skuToSlug(product.sku)}`,
     brand: {
       '@type': 'Brand',

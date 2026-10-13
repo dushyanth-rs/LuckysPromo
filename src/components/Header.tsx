@@ -3,15 +3,12 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { ManpointeLogo } from './ManpointeLogo';
-import { scrollToSectionOrNavigateHome } from '../lib/navigation';
+import { SectionNavLink } from './SectionNavLink';
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const scrollToSection = (id: string) => {
-    setMobileMenuOpen(false);
-    scrollToSectionOrNavigateHome(id);
-  };
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
     <header className="sticky top-0 z-50 bg-white text-[#0B1D3A] shadow-sm border-b border-gray-200">
@@ -19,9 +16,9 @@ export const Header: React.FC = () => {
         <div className="flex items-center justify-between h-24">
 
           {/* Brand Logo & Wordmark Container */}
-          <div
+          <SectionNavLink
+            id="hero"
             className="flex items-center space-x-3.5 cursor-pointer group"
-            onClick={() => scrollToSection('hero')}
           >
             {/* Official Manpointe Geometric M Logo Tile */}
             <div className="relative w-12 h-12 bg-white rounded-xl p-1.5 shadow-sm flex items-center justify-center shrink-0 border border-gray-200 group-hover:border-[#0068C8]/50 transition-all duration-300 group-hover:scale-105">
@@ -43,28 +40,28 @@ export const Header: React.FC = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </SectionNavLink>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium">
-            <button
-              onClick={() => scrollToSection('hero')}
+            <SectionNavLink
+              id="hero"
               className="text-gray-600 hover:text-[#0068C8] transition-colors duration-200 cursor-pointer"
             >
               Home
-            </button>
-            <button
-              onClick={() => scrollToSection('printing')}
+            </SectionNavLink>
+            <SectionNavLink
+              id="printing"
               className="text-gray-600 hover:text-[#0068C8] transition-colors duration-200 cursor-pointer"
             >
               Printing
-            </button>
-            <button
-              onClick={() => scrollToSection('differentiators')}
+            </SectionNavLink>
+            <SectionNavLink
+              id="differentiators"
               className="text-gray-600 hover:text-[#0068C8] transition-colors duration-200 cursor-pointer"
             >
               Why Us
-            </button>
+            </SectionNavLink>
             <Link
               href="/products"
               className="text-gray-600 hover:text-[#0068C8] transition-colors duration-200 flex items-center gap-1 cursor-pointer"
@@ -74,12 +71,12 @@ export const Header: React.FC = () => {
                 NEW
               </span>
             </Link>
-            <button
-              onClick={() => scrollToSection('about')}
+            <SectionNavLink
+              id="about"
               className="text-gray-600 hover:text-[#0068C8] transition-colors duration-200 cursor-pointer"
             >
               About Us
-            </button>
+            </SectionNavLink>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -99,37 +96,41 @@ export const Header: React.FC = () => {
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-gray-200 px-4 pt-3 pb-6 space-y-3">
-          <button
-            onClick={() => scrollToSection('hero')}
+          <SectionNavLink
+            id="hero"
+            onNavigate={closeMobileMenu}
             className="block w-full text-left py-2 text-gray-600 hover:text-[#0068C8] text-base font-medium border-b border-gray-100"
           >
             Home
-          </button>
-          <button
-            onClick={() => scrollToSection('printing')}
+          </SectionNavLink>
+          <SectionNavLink
+            id="printing"
+            onNavigate={closeMobileMenu}
             className="block w-full text-left py-2 text-gray-600 hover:text-[#0068C8] text-base font-medium border-b border-gray-100"
           >
             Printing Capabilities
-          </button>
-          <button
-            onClick={() => scrollToSection('differentiators')}
+          </SectionNavLink>
+          <SectionNavLink
+            id="differentiators"
+            onNavigate={closeMobileMenu}
             className="block w-full text-left py-2 text-gray-600 hover:text-[#0068C8] text-base font-medium border-b border-gray-100"
           >
             Why Choose Us
-          </button>
+          </SectionNavLink>
           <Link
             href="/products"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={closeMobileMenu}
             className="block w-full text-left py-2 text-gray-600 hover:text-[#0068C8] text-base font-medium border-b border-gray-100"
           >
             Product Catalog
           </Link>
-          <button
-            onClick={() => scrollToSection('about')}
+          <SectionNavLink
+            id="about"
+            onNavigate={closeMobileMenu}
             className="block w-full text-left py-2 text-gray-600 hover:text-[#0068C8] text-base font-medium"
           >
             About Us
-          </button>
+          </SectionNavLink>
         </div>
       )}
     </header>

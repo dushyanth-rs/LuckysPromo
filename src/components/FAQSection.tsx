@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { WHATSAPP_NUMBER } from '../lib/whatsapp';
+import { faqSchema } from '../lib/schema';
 
 const FAQS = [
   {
@@ -41,6 +42,10 @@ export const FAQSection: React.FC = () => {
 
   return (
     <section id="faq" className="py-20 bg-white text-[#1A1A1A] relative border-b border-gray-200">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(FAQS)) }}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">

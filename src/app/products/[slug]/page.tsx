@@ -5,6 +5,7 @@ import { ArrowLeft, MessageCircle, Shield, Truck, Printer } from 'lucide-react';
 import { allProducts, findProductBySlug, skuToSlug } from '../../../lib/slug';
 import { productSchema, SITE_URL } from '../../../lib/schema';
 import { productWhatsAppLink } from '../../../lib/whatsapp';
+import { getProductDisplayImage, getProductAbsoluteImageUrl, getProductColorList } from '../../../lib/product-display';
 
 export function generateStaticParams() {
   return allProducts().map((product) => ({ slug: skuToSlug(product.sku) }));
@@ -27,7 +28,7 @@ export async function generateMetadata({
   const title = product.name;
   const fullTitle = `${product.name} | Luckys Promo`;
   const description = `${product.name} - ${product.specs}. Material: ${product.material}. Available colors: ${product.colors}. Premium corporate gifting from Luckys Promo.`;
-  const imageUrl = product.image.startsWith('http') ? product.image : `${SITE_URL}${product.image}`;
+  const imageUrl = getProductAbsoluteImageUrl(product, SITE_URL);
   const url = `${SITE_URL}/products/${slug}`;
 
   return {
@@ -61,13 +62,8 @@ export default async function ProductPage({
     notFound();
   }
 
-  const colorList = product.colors
-    ? product.colors.split(',').map((c) => c.trim())
-    : [];
-
-  const imageUrl = product.image
-    ? product.image.replace('/1A1A1A/C5A059', '/FFFFFF/0B1D3A')
-    : `https://placehold.co/400x400/FFFFFF/0B1D3A?text=${encodeURIComponent(product.sku)}`;
+  const colorList = getProductColorList(product);
+  const imageUrl = getProductDisplayImage(product);
 
   return (
     <section className="py-12 bg-white text-[#1A1A1A] min-h-[70vh]">
@@ -138,9 +134,9 @@ export default async function ProductPage({
 
                 {colorList.length > 0 && (
                   <div className="flex flex-wrap gap-1.5">
-                    {colorList.map((color) => (
+                    {colorList.map((color, idx) => (
                       <span
-                        key={color}
+                        key={idx}
                         className="bg-gray-100 text-gray-700 text-[11px] px-2.5 py-1 rounded-full border border-gray-200"
                       >
                         {color}

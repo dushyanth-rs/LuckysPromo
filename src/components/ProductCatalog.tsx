@@ -233,7 +233,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               </button>
 
               {categories.map((cat) => {
-                const count = products.filter((p) => p.category.trim() === cat).length;
+                const count = products.filter((p) => p.category && p.category.trim() === cat).length;
                 return (
                   <button
                     key={cat}
@@ -272,8 +272,8 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                 </button>
                 {subCategories.map((subCat) => {
                   const subCount = products.filter((p) => {
-                    const matchesCat = selectedCategory === 'ALL' || p.category.trim() === selectedCategory;
-                    return matchesCat && p.sub_category.trim() === subCat;
+                    const matchesCat = selectedCategory === 'ALL' || (p.category && p.category.trim() === selectedCategory);
+                    return matchesCat && p.sub_category && p.sub_category.trim() === subCat;
                   }).length;
                   return (
                     <button

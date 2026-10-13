@@ -1,22 +1,22 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { Mail, Phone, ArrowUp, Building2, MessageCircle } from 'lucide-react';
 import { ManpointeLogo } from './ManpointeLogo';
 import { WHATSAPP_NUMBER } from '../lib/whatsapp';
-import { scrollToSectionOrNavigateHome } from '../lib/navigation';
+import { SectionNavLink } from './SectionNavLink';
 
 export const Footer: React.FC = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+
   const scrollToTop = () => {
-    if (window.location.pathname !== '/') {
-      window.location.href = '/';
+    if (pathname !== '/') {
+      router.push('/');
       return;
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const scrollToSection = (id: string) => {
-    scrollToSectionOrNavigateHome(id);
   };
 
   return (
@@ -61,19 +61,19 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs text-gray-600">
               <li>
-                <button onClick={() => scrollToSection('hero')} className="hover:text-[#0068C8] transition-colors cursor-pointer">
+                <SectionNavLink id="hero" className="hover:text-[#0068C8] transition-colors cursor-pointer">
                   Home & Overview
-                </button>
+                </SectionNavLink>
               </li>
               <li>
-                <button onClick={() => scrollToSection('printing')} className="hover:text-[#0068C8] transition-colors cursor-pointer">
+                <SectionNavLink id="printing" className="hover:text-[#0068C8] transition-colors cursor-pointer">
                   Printing Capabilities
-                </button>
+                </SectionNavLink>
               </li>
               <li>
-                <button onClick={() => scrollToSection('differentiators')} className="hover:text-[#0068C8] transition-colors cursor-pointer">
+                <SectionNavLink id="differentiators" className="hover:text-[#0068C8] transition-colors cursor-pointer">
                   Core Differentiators
-                </button>
+                </SectionNavLink>
               </li>
               <li>
                 <Link href="/products" className="hover:text-[#0068C8] transition-colors cursor-pointer">
@@ -81,9 +81,9 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <button onClick={() => scrollToSection('about')} className="hover:text-[#0068C8] transition-colors cursor-pointer">
+                <SectionNavLink id="about" className="hover:text-[#0068C8] transition-colors cursor-pointer">
                   About Us
-                </button>
+                </SectionNavLink>
               </li>
             </ul>
           </div>
