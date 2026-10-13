@@ -66,6 +66,8 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   // Filter products cleanly with normalized string matching
   const filteredProducts = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
+    // Strip punctuation/spaces so "srg033", "srg 033", and "SRG-033" all match the same SKU
+    const queryAlnum = query.replace(/[^a-z0-9]/g, '');
     const selCatNorm = selectedCategory.trim().toLowerCase();
     const selSubCatNorm = selectedSubCategory.trim().toLowerCase();
 
@@ -83,7 +85,10 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       }
       // Search Query Filter
       if (query !== '') {
-        const matchesSku = (product.sku || '').toLowerCase().includes(query);
+        const skuNorm = (product.sku || '').toLowerCase();
+        const matchesSku =
+          skuNorm.includes(query) ||
+          (queryAlnum !== '' && skuNorm.replace(/[^a-z0-9]/g, '').includes(queryAlnum));
         const matchesName = (product.name || '').toLowerCase().includes(query);
         const matchesSpecs = (product.specs || '').toLowerCase().includes(query);
         const matchesMaterial = (product.material || '').toLowerCase().includes(query);
