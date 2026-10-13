@@ -3,6 +3,21 @@ import type { Product } from '../types/product';
 import { ProductCard } from './ProductCard';
 import { Search, Filter, RotateCcw, Package, ListFilter, ChevronDown, ChevronUp } from 'lucide-react';
 
+// Everyday terms customers search for that don't literally appear in the
+// catalog's own wording (e.g. every bottle here is called "Thermos Bottle"
+// or "Steel Bottle", never "water bottle"). Each key maps to the catalog
+// vocabulary it should be treated as matching.
+const SEARCH_SYNONYMS: Record<string, string[]> = {
+  water: ['bottle', 'thermos', 'flask', 'sipper'],
+  cup: ['mug'],
+  mug: ['cup'],
+  bag: ['tote', 'pouch', 'backpack'],
+  notepad: ['diary', 'notebook'],
+  note: ['diary', 'notebook'],
+  key: ['keychain'],
+  pendrive: ['usb', 'flash drive'],
+};
+
 interface ProductCatalogProps {
   products: Product[];
   onSelectProduct: (product: Product) => void;
@@ -66,6 +81,12 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   // Filter products cleanly with normalized string matching
   const filteredProducts = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
+    // Strip punctuation/spaces so "srg033", "srg 033", and "SRG-033" all match the same SKU
+    const queryAlnum = query.replace(/[^a-z0-9]/g, '');
+    // Split multi-word searches ("water bottle") into separate terms that must
+    // ALL be found somewhere in the product, rather than requiring that exact
+    // phrase to appear as one literal substring.
+    const queryWords = query.split(/\s+/).filter(Boolean);
     const selCatNorm = selectedCategory.trim().toLowerCase();
     const selSubCatNorm = selectedSubCategory.trim().toLowerCase();
 
@@ -83,21 +104,32 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       }
       // Search Query Filter
       if (query !== '') {
-        const matchesSku = (product.sku || '').toLowerCase().includes(query);
-        const matchesName = (product.name || '').toLowerCase().includes(query);
-        const matchesSpecs = (product.specs || '').toLowerCase().includes(query);
-        const matchesMaterial = (product.material || '').toLowerCase().includes(query);
-        const matchesCategory = prodCatNorm.includes(query);
-        const matchesSubCategory = prodSubCatNorm.includes(query);
+        const skuNorm = (product.sku || '').toLowerCase();
+        const matchesSku =
+          skuNorm.includes(query) ||
+          (queryAlnum !== '' && skuNorm.replace(/[^a-z0-9]/g, '').includes(queryAlnum));
 
-        return (
-          matchesSku ||
-          matchesName ||
-          matchesSpecs ||
-          matchesMaterial ||
-          matchesCategory ||
-          matchesSubCategory
-        );
+        const combinedText = [
+          product.name,
+          product.specs,
+          product.material,
+          prodCatNorm,
+          prodSubCatNorm,
+        ]
+          .join(' ')
+          .toLowerCase();
+
+        // Every word in the query must appear somewhere in the product's
+        // combined text, directly or via a known synonym.
+        const matchesText =
+          queryWords.length > 0 &&
+          queryWords.every((word) => {
+            if (combinedText.includes(word)) return true;
+            const synonyms = SEARCH_SYNONYMS[word];
+            return synonyms ? synonyms.some((syn) => combinedText.includes(syn)) : false;
+          });
+
+        return matchesSku || matchesText;
       }
       return true;
     });
