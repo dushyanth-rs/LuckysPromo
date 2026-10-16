@@ -2,12 +2,6 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
 
-function encode(data: Record<string, string>): string {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&');
-}
-
 export const ContactForm: React.FC = () => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -20,11 +14,15 @@ export const ContactForm: React.FC = () => {
     e.preventDefault();
     setStatus('submitting');
     try {
-      await fetch('/', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'contact', ...form }),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
       });
+      const result = await res.json();
+      if (!res.ok || !result.ok) {
+        throw new Error(result.error || 'Failed to send');
+      }
       setStatus('success');
       setForm({ name: '', email: '', phone: '', message: '' });
     } catch {
@@ -46,21 +44,9 @@ export const ContactForm: React.FC = () => {
 
   return (
     <form
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
       className="bg-[#071326] rounded-xl p-6 sm:p-8 border border-[#152B52] shadow-xl space-y-5"
     >
-      {/* Required for Netlify's build-time form detection */}
-      <input type="hidden" name="form-name" value="contact" />
-      <p className="hidden">
-        <label>
-          Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
-        </label>
-      </p>
-
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="space-y-1.5">
           <label htmlFor="name" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
@@ -103,6 +89,7 @@ export const ContactForm: React.FC = () => {
           id="phone"
           name="phone"
           type="tel"
+          required
           value={form.phone}
           onChange={handleChange}
           className="w-full px-4 py-2.5 bg-[#152B52]/60 border border-[#152B52] focus:border-[#C5A059] rounded-md text-sm text-white placeholder-gray-500 focus:outline-none transition-colors"
