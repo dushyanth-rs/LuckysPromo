@@ -164,6 +164,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
             Browse {products.length}+ corporate gifts and promotional products — executive diaries, drinkware, pens, bags, keychains, and tech accessories, customizable with your logo. Filter by category or search by SKU, name, or material.
           </p>
+          <p className="text-gray-400 text-xs sm:text-sm italic">
+            All products can be customized with your branding; colors, materials, and specific items are subject to availability at the time of order.
+          </p>
         </div>
 
         {/* Filter Controls Bar / Top Bar & Sidebar Layout */}
