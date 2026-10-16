@@ -1,14 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
-// Luckys Promo's existing WordPress site runs Contact Form 7, which already
-// emails info@luckyspromo.com on submission. Reusing its public REST
-// feedback endpoint here means this form sends real mail without needing a
-// separate email service or new credentials. Proxied server-side (rather
-// than called from the browser) to sidestep any CORS restrictions on the
-// WordPress REST API and keep these implementation details server-only.
-const WPCF7_FEEDBACK_URL =
-  'https://luckyspromo.com/wp-json/contact-form-7/v1/contact-forms/21686/feedback';
-const WPCF7_UNIT_TAG = 'wpcf7-f21686-p21635-o1';
+// Sends contact-form submissions via the info@luckyspromo.com mailbox's own
+// SMTP, hosted on Hostinger alongside the domain. This keeps mail delivery
+// independent of the WordPress site, which is being retired once the domain
+// points here. Credentials are read from environment variables only -
+// never hardcoded - set in the Netlify dashboard (Site settings >
+// Environment variables):
+//   SMTP_HOST      e.g. smtp.hostinger.com
+//   SMTP_PORT      465 (SSL) or 587 (STARTTLS)
+//   SMTP_USER      info@luckyspromo.com
+//   SMTP_PASSWORD  that mailbox's password
+//   CONTACT_TO     (optional) defaults to info@luckyspromo.com
 
 export async function POST(request: NextRequest) {
   const body = await request.json().catch(() => null);
@@ -21,35 +24,47 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ ok: false, error: 'Missing required fields' }, { status: 400 });
   }
 
-  const formData = new FormData();
-  formData.append('_wpcf7', '21686');
-  formData.append('_wpcf7_version', '6.1.6');
-  formData.append('_wpcf7_locale', 'en_US');
-  formData.append('_wpcf7_unit_tag', WPCF7_UNIT_TAG);
-  formData.append('_wpcf7_container_post', '21635');
-  formData.append('_wpcf7_posted_data_hash', '');
-  formData.append('your-name', name);
-  formData.append('your-email', email);
-  formData.append('tel-603', phone || '');
-  formData.append('your-message', message);
-  formData.append('checkbox-953', 'You agree to our friendly privacy policy.');
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, CONTACT_TO } = process.env;
+  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASSWORD) {
+    return NextResponse.json(
+      { ok: false, error: 'Email is not configured on the server' },
+      { status: 500 }
+    );
+  }
+
+  const transporter = nodemailer.createTransport({
+    host: SMTP_HOST,
+    port: Number(SMTP_PORT),
+    secure: Number(SMTP_PORT) === 465,
+    auth: { user: SMTP_USER, pass: SMTP_PASSWORD },
+  });
 
   try {
-    const wpResponse = await fetch(WPCF7_FEEDBACK_URL, {
-      method: 'POST',
-      body: formData,
+    await transporter.sendMail({
+      from: `"Luckys Promo Website" <${SMTP_USER}>`,
+      to: CONTACT_TO || 'info@luckyspromo.com',
+      replyTo: email,
+      subject: `New enquiry from ${name} (via luckyspromo.com)`,
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`,
+      html: `
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+        <p><strong>Message:</strong></p>
+        <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
+      `,
     });
-    const wpResult = await wpResponse.json();
-
-    if (wpResult.status === 'mail_sent') {
-      return NextResponse.json({ ok: true });
-    }
-
-    return NextResponse.json(
-      { ok: false, error: wpResult.message || 'The message could not be sent' },
-      { status: 502 }
-    );
+    return NextResponse.json({ ok: true });
   } catch {
-    return NextResponse.json({ ok: false, error: 'Failed to reach the mail service' }, { status: 502 });
+    return NextResponse.json({ ok: false, error: 'Failed to send the message' }, { status: 502 });
   }
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
