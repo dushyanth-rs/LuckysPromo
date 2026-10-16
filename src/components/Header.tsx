@@ -77,6 +77,12 @@ export const Header: React.FC = () => {
             >
               About Us
             </SectionNavLink>
+            <Link
+              href="/contact"
+              className="text-gray-600 hover:text-[#0068C8] transition-colors duration-200 cursor-pointer"
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -127,10 +133,17 @@ export const Header: React.FC = () => {
           <SectionNavLink
             id="about"
             onNavigate={closeMobileMenu}
-            className="block w-full text-left py-2 text-gray-600 hover:text-[#0068C8] text-base font-medium"
+            className="block w-full text-left py-2 text-gray-600 hover:text-[#0068C8] text-base font-medium border-b border-gray-100"
           >
             About Us
           </SectionNavLink>
+          <Link
+            href="/contact"
+            onClick={closeMobileMenu}
+            className="block w-full text-left py-2 text-gray-600 hover:text-[#0068C8] text-base font-medium"
+          >
+            Contact
+          </Link>
         </div>
       )}
     </header>
