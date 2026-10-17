@@ -19,7 +19,7 @@ header('Content-Type: application/json');
 const MAX_NAME_LENGTH = 100;
 const MAX_EMAIL_LENGTH = 254; // RFC 5321 max
 const MAX_PHONE_LENGTH = 20;
-const MAX_MESSAGE_LENGTH = 3000;
+const MAX_MESSAGE_LENGTH = 1000;
 const RATE_LIMIT_SECONDS = 30; // min gap between submissions from the same IP
 
 // Only accept POST.

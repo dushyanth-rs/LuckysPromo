@@ -4,10 +4,19 @@ import { Send, CheckCircle2 } from 'lucide-react';
 
 export const ContactForm: React.FC = () => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '', website: '' });
+  const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  // Matches the server's allowed phone charset (digits, spaces, +, -, ())
+  // so invalid characters never appear in the field at all, instead of
+  // being accepted and rejected only after submit.
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const filtered = e.target.value.replace(/[^0-9+\-\s()]/g, '');
+    setForm((prev) => ({ ...prev, phone: filtered }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -25,6 +34,7 @@ export const ContactForm: React.FC = () => {
       }
       setStatus('success');
       setForm({ name: '', email: '', phone: '', message: '', website: '' });
+      setConsent(false);
     } catch {
       setStatus('error');
     }
@@ -110,7 +120,7 @@ export const ContactForm: React.FC = () => {
           required
           maxLength={20}
           value={form.phone}
-          onChange={handleChange}
+          onChange={handlePhoneChange}
           className="w-full px-4 py-2.5 bg-[#152B52]/60 border border-[#152B52] focus:border-[#C5A059] rounded-md text-sm text-white placeholder-gray-500 focus:outline-none transition-colors"
           placeholder="Include your number so we can call you back"
         />
@@ -124,7 +134,7 @@ export const ContactForm: React.FC = () => {
           id="message"
           name="message"
           required
-          maxLength={3000}
+          maxLength={1000}
           rows={5}
           value={form.message}
           onChange={handleChange}
@@ -133,9 +143,19 @@ export const ContactForm: React.FC = () => {
         />
       </div>
 
-      <p className="text-[11px] text-gray-400">
-        By submitting this form, you agree to be contacted by Luckys Promo regarding your enquiry.
-      </p>
+      <div className="flex items-start gap-2.5">
+        <input
+          id="consent"
+          type="checkbox"
+          required
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          className="mt-0.5 w-4 h-4 shrink-0 accent-[#0068C8] cursor-pointer"
+        />
+        <label htmlFor="consent" className="text-[11px] text-gray-400 cursor-pointer">
+          I consent to Luckys Promo collecting and using the information above to respond to my enquiry.
+        </label>
+      </div>
 
       {status === 'error' && (
         <p className="text-xs text-red-400">
