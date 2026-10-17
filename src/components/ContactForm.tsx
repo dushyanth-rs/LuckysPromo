@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
 
 export const ContactForm: React.FC = () => {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '', website: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -24,7 +24,7 @@ export const ContactForm: React.FC = () => {
         throw new Error(result.error || 'Failed to send');
       }
       setStatus('success');
-      setForm({ name: '', email: '', phone: '', message: '' });
+      setForm({ name: '', email: '', phone: '', message: '', website: '' });
     } catch {
       setStatus('error');
     }
@@ -45,8 +45,24 @@ export const ContactForm: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-[#071326] rounded-xl p-6 sm:p-8 border border-[#152B52] shadow-xl space-y-5"
+      className="relative bg-[#071326] rounded-xl p-6 sm:p-8 border border-[#152B52] shadow-xl space-y-5"
     >
+      {/* Honeypot: hidden from real users, bots that auto-fill every field
+          will trip it. Kept out of the tab order and off-screen rather than
+          display:none, which some bots skip. */}
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.website}
+          onChange={handleChange}
+        />
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="space-y-1.5">
           <label htmlFor="name" className="text-xs font-semibold text-gray-300 uppercase tracking-wider">
@@ -57,6 +73,7 @@ export const ContactForm: React.FC = () => {
             name="name"
             type="text"
             required
+            maxLength={100}
             value={form.name}
             onChange={handleChange}
             className="w-full px-4 py-2.5 bg-[#152B52]/60 border border-[#152B52] focus:border-[#C5A059] rounded-md text-sm text-white placeholder-gray-500 focus:outline-none transition-colors"
@@ -73,6 +90,7 @@ export const ContactForm: React.FC = () => {
             name="email"
             type="email"
             required
+            maxLength={254}
             value={form.email}
             onChange={handleChange}
             className="w-full px-4 py-2.5 bg-[#152B52]/60 border border-[#152B52] focus:border-[#C5A059] rounded-md text-sm text-white placeholder-gray-500 focus:outline-none transition-colors"
@@ -90,6 +108,7 @@ export const ContactForm: React.FC = () => {
           name="phone"
           type="tel"
           required
+          maxLength={20}
           value={form.phone}
           onChange={handleChange}
           className="w-full px-4 py-2.5 bg-[#152B52]/60 border border-[#152B52] focus:border-[#C5A059] rounded-md text-sm text-white placeholder-gray-500 focus:outline-none transition-colors"
@@ -105,6 +124,7 @@ export const ContactForm: React.FC = () => {
           id="message"
           name="message"
           required
+          maxLength={3000}
           rows={5}
           value={form.message}
           onChange={handleChange}
