@@ -22,28 +22,27 @@ jobs:
       - name: Include .htaccess in the static export
         run: cp server/.htaccess out/.htaccess
 
-      - name: Deploy static site
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: ./out/
-          server-dir: ./domains/luckyspromo.com/public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            contact-send/**
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
 
-      - name: Deploy contact-form mail endpoint
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: ./server/contact/
-          server-dir: ./domains/luckyspromo.com/public_html/contact-send/
-          exclude: |
-            config.php.example
+      # lftp's mirror transfers many files in parallel over several
+      # connections (vs. one file at a time), and only uploads files whose
+      # size/timestamp actually changed - much faster than a sequential FTP
+      # action for a static export with hundreds of small files. --delete
+      # is intentionally NOT used, so nothing on the server is ever removed
+      # automatically (matches the previous non-destructive behavior).
+      - name: Deploy over FTPS (parallel)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -c "
+            set ftp:ssl-allow yes;
+            set ssl:verify-certificate no;
+            set mirror:parallel-transfer-count 10;
+            set net:max-retries 2;
+            open -u \"\$FTP_USERNAME,\$FTP_PASSWORD\" \"\$FTP_SERVER\";
+            mirror -R --parallel=10 --exclude-glob '.git*' ./out/ /domains/luckyspromo.com/public_html/;
+            mirror -R --parallel=10 --exclude-glob 'config.php.example' ./server/contact/ /domains/luckyspromo.com/public_html/contact-send/;
+          "
