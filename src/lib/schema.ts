@@ -41,7 +41,7 @@ export function productSchema(product: Product) {
     category: product.category,
     description: `${product.specs} - ${product.material}. Available colors: ${product.colors}.`,
     image: getProductAbsoluteImageUrl(product, SITE_URL),
-    url: `${SITE_URL}/products/${skuToSlug(product.sku)}`,
+    url: `${SITE_URL}/products/${skuToSlug(product.sku)}/`,
     brand: {
       '@type': 'Brand',
       name: 'Luckys Promo',

@@ -1,0 +1,16 @@
+<?php
+/**
+ * Template only - placeholder values, safe to commit.
+ *
+ * The REAL file with actual credentials must be named config.php and must
+ * NEVER be placed inside public_html (the web root) or committed to git.
+ * Create it once, by hand, in a private directory one level above
+ * public_html on the Hostinger account - e.g. ~/contact-secrets/config.php
+ * - matching the path send.php requires it from.
+ */
+
+define('SMTP_HOST', 'smtp.hostinger.com');
+define('SMTP_PORT', 465); // 465 = SSL, 587 = STARTTLS
+define('SMTP_USER', 'info@luckyspromo.com');
+define('SMTP_PASSWORD', 'REPLACE_ME');
+define('CONTACT_TO', 'info@luckyspromo.com'); // optional, defaults to SMTP_USER's inbox

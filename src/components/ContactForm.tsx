@@ -14,7 +14,7 @@ export const ContactForm: React.FC = () => {
     e.preventDefault();
     setStatus('submitting');
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('/contact-send/send.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

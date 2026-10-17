@@ -29,7 +29,7 @@ export async function generateMetadata({
   const fullTitle = `${product.name} | Luckys Promo`;
   const description = `${product.name} - ${product.specs}. Material: ${product.material}. Available colors: ${product.colors}. Premium corporate gifting from Luckys Promo.`;
   const imageUrl = getProductAbsoluteImageUrl(product, SITE_URL);
-  const url = `${SITE_URL}/products/${slug}`;
+  const url = `${SITE_URL}/products/${slug}/`;
 
   return {
     title,

@@ -11,11 +11,11 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: `${SITE_URL}/products` },
+  alternates: { canonical: `${SITE_URL}/products/` },
   openGraph: {
     title: `${title} | Luckys Promo`,
     description,
-    url: `${SITE_URL}/products`,
+    url: `${SITE_URL}/products/`,
     type: 'website',
   },
 };

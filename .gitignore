@@ -11,9 +11,15 @@ node_modules
 dist
 dist-ssr
 .next
+out
 next-env.d.ts
 *.tsbuildinfo
 *.local
+
+# Real contact-form mail credentials - never committed, uploaded by hand
+# to a private directory outside the web root on the server. See
+# server/contact/config.php.example.
+server/contact/config.php
 
 # Editor directories and files
 .vscode/*
