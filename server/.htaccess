@@ -6,6 +6,16 @@
 
 RewriteEngine On
 
+# Duplicate products merged into a single canonical listing (2026-10) -
+# redirect their old URLs to the product they were folded into, in case
+# any of them got indexed/linked before the merge.
+RewriteRule ^products/srg-pn-1036/?$ https://luckyspromo.com/products/srg-pn-1017/ [R=301,L]
+RewriteRule ^products/srg-pn-1036-b/?$ https://luckyspromo.com/products/srg-pn-1017/ [R=301,L]
+RewriteRule ^products/srg-pn-1047-b/?$ https://luckyspromo.com/products/srg-pn-1047/ [R=301,L]
+RewriteRule ^products/srg-kc-1005-b/?$ https://luckyspromo.com/products/srg-kc-1005/ [R=301,L]
+RewriteRule ^products/srg-pn-1010/?$ https://luckyspromo.com/products/srg-pn-1016/ [R=301,L]
+RewriteRule ^products/no-61/?$ https://luckyspromo.com/products/no-41/ [R=301,L]
+
 # Force HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

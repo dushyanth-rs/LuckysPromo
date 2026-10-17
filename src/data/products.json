@@ -200,21 +200,11 @@
     "image": "/products/SRG-PN-1024.png"
   },
   {
-    "sku": "SRG-PN-1036",
-    "category": "Pens & Writing",
-    "sub_category": "Eco-Friendly Pens",
-    "name": "Eco Bamboo Pen",
-    "specs": "Click Mechanism",
-    "material": "Bamboo",
-    "colors": "Natural Bamboo",
-    "image": "/products/SRG-PN-1036.png"
-  },
-  {
     "sku": "SRG-PN-1047",
     "category": "Pens & Writing",
     "sub_category": "Fidget Pens",
     "name": "Stress Relief Fidget Pen",
-    "specs": "Rotate to Stress Relief",
+    "specs": "Rotate to Stress Relief/Fidget",
     "material": "Metal/Plastic",
     "colors": "Black, Blue, Grey",
     "image": "/products/SRG-PN-1047.png"
@@ -244,7 +234,7 @@
     "category": "Keychains & Card Holders",
     "sub_category": "Metal Keychains",
     "name": "Hook & Bottle Opener Keychain",
-    "specs": "Carabiner clip design",
+    "specs": "Carabiner clip design with bottle opener",
     "material": "Metal",
     "colors": "Black, Blue, Red",
     "image": "/products/hook-bottle-opener-keychain.jpg"
@@ -318,16 +308,6 @@
     "material": "Wooden PU Finish",
     "colors": "Wood",
     "image": "/products/wooden-diary.jpg"
-  },
-  {
-    "sku": "NO:61",
-    "category": "Notebooks & Diaries",
-    "sub_category": "Executive Diaries",
-    "name": "Elastic Diary",
-    "specs": "A5 Size, 192 Pages",
-    "material": "PU Leather",
-    "colors": "Assorted",
-    "image": "/products/elastic-diary.jpg"
   },
   {
     "sku": "NO:63",
@@ -496,28 +476,8 @@
     "name": "Premium Metal Ball Pen",
     "specs": "Ballpoint, Click Mechanism",
     "material": "Metal",
-    "colors": "Black Grey, Black Rose, Black Silver, Grey, White Silver, Blue Grey, Brown, Tan, Tan Grey, White Black, White Grey",
+    "colors": "Black, White, Black Grey, Black Rose, Black Silver, Grey, White Silver, Blue Grey, Brown, Tan, Tan Grey, White Black, White Grey",
     "image": "/products/SRG-PN-1016.png"
-  },
-  {
-    "sku": "SRG-PN-1036-B",
-    "category": "Pens & Writing",
-    "sub_category": "Eco-Friendly Pens",
-    "name": "Bamboo Pen",
-    "specs": "Click Mechanism",
-    "material": "Bamboo",
-    "colors": "Bamboo",
-    "image": "/products/bamboo-pen.jpg"
-  },
-  {
-    "sku": "SRG-PN-1047-B",
-    "category": "Pens & Writing",
-    "sub_category": "Fidget Pens",
-    "name": "Stress Relief Pen",
-    "specs": "Rotate to Stress Relief/Fidget",
-    "material": "Metal & Plastic",
-    "colors": "Black, Blue, Grey",
-    "image": "/products/stress-relief-pen.jpg"
   },
   {
     "sku": "SRG-KC-1004",
@@ -528,16 +488,6 @@
     "material": "Metal & Leatherette",
     "colors": "Black, Blue, Gold, Red, Tan, White, Brown",
     "image": "/products/SRG-KC-1004.png"
-  },
-  {
-    "sku": "SRG-KC-1005-B",
-    "category": "Keychains & Card Holders",
-    "sub_category": "Metal Keychains",
-    "name": "Bottle Opener Keychain",
-    "specs": "Carabiner clip with bottle opener",
-    "material": "Metal",
-    "colors": "Black, Blue, Red",
-    "image": "/products/bottle-opener-keychain-v2.jpg"
   },
   {
     "sku": "SRG-KC-1008",
@@ -678,16 +628,6 @@
     "material": "Mixed",
     "colors": "Assorted",
     "image": "/products/power-bank.jpg"
-  },
-  {
-    "sku": "SRG-PN-1010",
-    "category": "Pens & Writing",
-    "sub_category": "Premium Metal Pens",
-    "name": "Premium Metal Ball Pen",
-    "specs": "Ballpoint",
-    "material": "Metal",
-    "colors": "Black, White",
-    "image": "/products/SRG-PN-1010.png"
   },
   {
     "sku": "SRG-PN-1017",
