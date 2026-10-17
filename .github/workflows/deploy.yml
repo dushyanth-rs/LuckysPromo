@@ -30,7 +30,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./out/
-          server-dir: ./
+          server-dir: ./domains/luckyspromo.com/public_html/
           exclude: |
             **/.git*
             **/.git*/**
@@ -44,6 +44,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./server/contact/
-          server-dir: ./contact-send/
+          server-dir: ./domains/luckyspromo.com/public_html/contact-send/
           exclude: |
             config.php.example
