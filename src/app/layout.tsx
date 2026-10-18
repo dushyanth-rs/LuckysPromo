@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { WhatsAppButton } from '../components/WhatsAppButton';
-import { organizationSchema, SITE_URL } from '../lib/schema';
+import { organizationSchema, websiteSchema, SITE_URL } from '../lib/schema';
 import '../index.css';
 
 export const metadata: Metadata = {
@@ -42,6 +42,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema()) }}
         />
         <Header />
         <main className="flex-1">{children}</main>

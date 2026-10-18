@@ -16,6 +16,10 @@ RewriteRule ^products/srg-kc-1005-b/?$ https://luckyspromo.com/products/srg-kc-1
 RewriteRule ^products/srg-pn-1010/?$ https://luckyspromo.com/products/srg-pn-1016/ [R=301,L]
 RewriteRule ^products/no-61/?$ https://luckyspromo.com/products/no-41/ [R=301,L]
 
+# Canonicalize www -> apex domain (one hop, regardless of http/https)
+RewriteCond %{HTTP_HOST} ^www\.luckyspromo\.com$ [NC]
+RewriteRule ^(.*)$ https://luckyspromo.com/$1 [L,R=301]
+
 # Force HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

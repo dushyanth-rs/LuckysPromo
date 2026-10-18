@@ -68,7 +68,7 @@ export const AboutUs: React.FC = () => {
 
         {/* Developed-for line */}
         <p className="mt-16 text-center text-sm text-gray-500 italic">
-          Developed for <span className="font-semibold text-[#0068C8] not-italic">Manpointevents</span>
+          Developed for <span className="font-semibold text-[#0068C8] not-italic">Manpointe Tech LLP</span>
         </p>
 
       </div>

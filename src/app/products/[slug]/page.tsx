@@ -3,9 +3,22 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, MessageCircle, Shield, Truck, Printer } from 'lucide-react';
 import { allProducts, findProductBySlug, skuToSlug } from '../../../lib/slug';
-import { productSchema, SITE_URL } from '../../../lib/schema';
+import { productSchema, breadcrumbSchema, SITE_URL } from '../../../lib/schema';
 import { productWhatsAppLink } from '../../../lib/whatsapp';
 import { getProductDisplayImage, getProductAbsoluteImageUrl, getProductColorList } from '../../../lib/product-display';
+import type { Product } from '../../../types/product';
+
+function relatedProducts(product: Product, limit = 4): Product[] {
+  const others = allProducts().filter((p) => p.sku !== product.sku);
+  const sameSubCategory = others.filter((p) => p.sub_category === product.sub_category);
+  if (sameSubCategory.length >= limit) {
+    return sameSubCategory.slice(0, limit);
+  }
+  const sameCategory = others.filter(
+    (p) => p.category === product.category && p.sub_category !== product.sub_category
+  );
+  return [...sameSubCategory, ...sameCategory].slice(0, limit);
+}
 
 export function generateStaticParams() {
   return allProducts().map((product) => ({ slug: skuToSlug(product.sku) }));
@@ -64,6 +77,7 @@ export default async function ProductPage({
 
   const colorList = getProductColorList(product);
   const imageUrl = getProductDisplayImage(product);
+  const related = relatedProducts(product);
 
   return (
     <section className="py-12 bg-white text-[#1A1A1A] min-h-[70vh]">
@@ -71,8 +85,32 @@ export default async function ProductPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema(product)) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(product)) }}
+      />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <nav aria-label="Breadcrumb" className="mb-4 text-xs text-gray-500">
+          <ol className="flex flex-wrap items-center gap-1.5">
+            <li>
+              <Link href="/" className="hover:text-[#0068C8]">Home</Link>
+              <span className="mx-1.5 text-gray-300">/</span>
+            </li>
+            <li>
+              <Link href="/products" className="hover:text-[#0068C8]">Products</Link>
+              <span className="mx-1.5 text-gray-300">/</span>
+            </li>
+            <li>
+              <span className="text-gray-400">{product.category}</span>
+              <span className="mx-1.5 text-gray-300">/</span>
+            </li>
+            <li className="text-[#0B1D3A] font-medium" aria-current="page">
+              {product.name}
+            </li>
+          </ol>
+        </nav>
 
         <Link
           href="/products"
@@ -175,6 +213,35 @@ export default async function ProductPage({
 
           </div>
         </div>
+
+        {related.length > 0 && (
+          <div className="mt-12">
+            <h2 className="text-lg font-bold text-[#0B1D3A] mb-4">Related Products</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {related.map((relatedProduct) => (
+                <Link
+                  key={relatedProduct.sku}
+                  href={`/products/${skuToSlug(relatedProduct.sku)}/`}
+                  className="group block bg-white rounded-lg border border-gray-200 hover:border-[#0068C8] transition-colors overflow-hidden"
+                >
+                  <div className="aspect-square bg-gray-50 p-3 flex items-center justify-center">
+                    <img
+                      src={getProductDisplayImage(relatedProduct)}
+                      alt={relatedProduct.name}
+                      loading="lazy"
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
+                  <div className="p-2.5">
+                    <p className="text-xs font-medium text-[#0B1D3A] group-hover:text-[#0068C8] leading-snug line-clamp-2">
+                      {relatedProduct.name}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
       </div>
     </section>

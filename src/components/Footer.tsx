@@ -125,7 +125,7 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Bottom Bar with Developed for Manpointevents & Copyright */}
+        {/* Bottom Bar with Developed for Manpointe Tech LLP & Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
           <div>
             © {new Date().getFullYear()} LUCKYS PROMO (Venture of MANPOINTE TECH LLP). All rights reserved.
@@ -133,7 +133,7 @@ export const Footer: React.FC = () => {
 
           <div className="flex items-center space-x-6">
             <span className="text-[#0068C8] font-medium">
-              Developed for <strong className="text-[#0B1D3A]">Manpointevents</strong>
+              Developed for <strong className="text-[#0B1D3A]">Manpointe Tech LLP</strong>
             </span>
 
             <button

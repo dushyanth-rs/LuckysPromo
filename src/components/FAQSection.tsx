@@ -79,11 +79,11 @@ export const FAQSection: React.FC = () => {
                     }`}
                   />
                 </button>
-                {isOpen && (
-                  <div className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </div>
-                )}
+                <div
+                  className={`px-5 pb-4 text-sm text-gray-600 leading-relaxed ${isOpen ? '' : 'hidden'}`}
+                >
+                  {faq.answer}
+                </div>
               </div>
             );
           })}

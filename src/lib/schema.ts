@@ -7,7 +7,7 @@ export const SITE_URL = 'https://luckyspromo.com';
 export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'LocalBusiness',
     name: 'Luckys Promo',
     alternateName: 'Manpointe Tech LLP',
     url: SITE_URL,
@@ -60,6 +60,35 @@ export function faqSchema(items: { question: string; answer: string }[]) {
         '@type': 'Answer',
         text: item.answer,
       },
+    })),
+  };
+}
+
+export function websiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Luckys Promo',
+    url: SITE_URL,
+  };
+}
+
+export function breadcrumbSchema(product: Product) {
+  const items = [
+    { name: 'Home', url: SITE_URL },
+    { name: 'Products', url: `${SITE_URL}/products/` },
+    { name: product.category, url: `${SITE_URL}/products/` },
+    { name: product.name, url: `${SITE_URL}/products/${skuToSlug(product.sku)}/` },
+  ];
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
     })),
   };
 }

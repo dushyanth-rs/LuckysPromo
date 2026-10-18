@@ -7,7 +7,7 @@ const CATEGORIES = [
   { label: 'ID Cards', img: '/hero/categories/id-cards.jpg' },
   { label: 'Pouches', img: '/hero/categories/pouches.jpg' },
   { label: 'Water Bottles', img: '/hero/categories/water-bottles.jpg' },
-  { label: 'Dairies', img: '/hero/categories/dairies.jpg' },
+  { label: 'Diaries', img: '/hero/categories/dairies.jpg' },
   { label: 'Pens', img: '/hero/categories/pens.jpg' },
   { label: 'Mugs', img: '/hero/categories/mugs.jpg' },
   { label: 'Certificates', img: '/hero/categories/certificates.jpg' },
