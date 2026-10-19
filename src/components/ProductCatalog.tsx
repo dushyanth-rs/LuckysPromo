@@ -184,7 +184,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search by SKU, Product Name, Material (e.g. SRG-033, Stainless Steel)..."
+                placeholder="Search by SKU, name, or material..."
                 className="w-full pl-10 pr-4 py-2.5 bg-[#152B52]/60 border border-[#152B52] focus:border-[#C5A059] rounded-md text-sm text-white placeholder-gray-400 focus:outline-none transition-colors"
               />
               {searchQuery && (
