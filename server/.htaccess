@@ -20,6 +20,12 @@ RewriteRule ^products/no-61/?$ https://luckyspromo.com/products/no-41/ [R=301,L]
 # still getting crawled/linked - redirect to the current product page.
 RewriteRule ^product/lanyards/?$ https://luckyspromo.com/products/lanyard-01/ [R=301,L]
 
+# Fallback for any other old /product/<slug>/ (singular) link we don't have
+# a specific mapping for yet - send to the current product listing rather
+# than 404. Keep this below any specific product/ rules above so those
+# take precedence.
+RewriteRule ^product/.*$ https://luckyspromo.com/products/ [R=301,L]
+
 # Canonicalize www -> apex domain (one hop, regardless of http/https)
 RewriteCond %{HTTP_HOST} ^www\.luckyspromo\.com$ [NC]
 RewriteRule ^(.*)$ https://luckyspromo.com/$1 [L,R=301]
