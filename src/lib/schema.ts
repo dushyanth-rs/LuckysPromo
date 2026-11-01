@@ -1,6 +1,5 @@
 import type { Product } from '../types/product';
 import { skuToSlug } from './slug';
-import { getProductAbsoluteImageUrl } from './product-display';
 
 export const SITE_URL = 'https://luckyspromo.com';
 
@@ -28,23 +27,6 @@ export function organizationSchema() {
       contactType: 'customer service',
       email: 'info@luckyspromo.com',
       areaServed: 'IN',
-    },
-  };
-}
-
-export function productSchema(product: Product) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: product.name,
-    sku: product.sku,
-    category: product.category,
-    description: `${product.specs} - ${product.material}. Available colors: ${product.colors}.`,
-    image: getProductAbsoluteImageUrl(product, SITE_URL),
-    url: `${SITE_URL}/products/${skuToSlug(product.sku)}/`,
-    brand: {
-      '@type': 'Brand',
-      name: 'Luckys Promo',
     },
   };
 }

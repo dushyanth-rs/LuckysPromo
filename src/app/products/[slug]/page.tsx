@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, MessageCircle, Shield, Truck, Printer } from 'lucide-react';
 import { allProducts, findProductBySlug, skuToSlug } from '../../../lib/slug';
-import { productSchema, breadcrumbSchema, SITE_URL } from '../../../lib/schema';
+import { breadcrumbSchema, SITE_URL } from '../../../lib/schema';
 import { productWhatsAppLink } from '../../../lib/whatsapp';
 import { getProductDisplayImage, getProductAbsoluteImageUrl, getProductColorList } from '../../../lib/product-display';
 import type { Product } from '../../../types/product';
@@ -81,10 +81,6 @@ export default async function ProductPage({
 
   return (
     <section className="py-12 bg-white text-[#1A1A1A] min-h-[70vh]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema(product)) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(product)) }}
